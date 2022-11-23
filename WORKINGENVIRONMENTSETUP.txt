@@ -1,0 +1,96 @@
+++++++++++++Working in our project++++++++++++++
+
+step 1=>Create the feature branch in git as the name will be =>feature/"projectnumber_sprinttaskNo/changesTitle.
+  ex=>"feature/ITPR56765_US74534/prescriptionHistoryChanges"
+      and in from we need to select the latest release "DEV_2022_06" branch from where the latest code your branch is gonna fetch.
+      when you deliver the code changes and commit it will gonna merge into the DEV branch and from there it is gonna deploy to 
+      SIT environment then PRODUCTION it will go.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+  =>First we need to clone the project in our local from git 
+   we can choose the option as "clone with https" or "clone with ssh"
+   => copy the url and come to our local files where we want to clone
+   => the project and right click git bash here
+   => then type command git clone "right click paste url"
+   =>after cloned =>cd file name(cloned)=>git branch -a=>select the created branch--git branch branch name which you want to switch
+   =>git checkout "branch name" =>to confirm the checkout type command =>git checkout .
+   => go to the STS and import the prject(choose existing maven project).
+   => after changing in the code we can commit the change to our branch=>right click on project
+   => go to team =>commit=>drag and drop file from "unstaged change" to "staged change"=>put the message in comment section
+   => commit and push and close the tab.
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  => if the commit is rejected then we can go to the "team" =>pull=>if we get "nothing is change everything is up to date" we can close the tab.
+  => if it fails to pull the code from feature branch then we can  do as.
+  => Right click project ->team ->switch branch -> choose master branch -> checkout -> checkout as new local branch
+  -> then again go to switch branch and switch branch of your feature branch.
+  -> discard the changes-> close the tab. 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+After cloning and importing the project when we need to run our project we need to copy paste the 
+ three files 1) application.yml 2)application.properties 3) bootstrap.yml from the working project
+ or we can change certain conents--------
+1) in bootstrap.yml after line " health check ($"------)
+ we can remove all the contents and select the spring db env configuration code from working bootstarp.yml file
+ and paste it there. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===============================================================================================
+
+
+
+  while running the project if we get dbaccess or dataAccess or data resultset error in log 
+ => saying invalid identifiers "XYZ_ABC" @Entity column name then check the =>Bootstap.yml and Application.yml
+  file and check the db environments and credentials whether it is in DEV1,DEV2, SIT1 or  SIT2
+  and confirm with your actual working env tables environments.
+
+
+=> To test the @Post and @Put api we need to get the payload from GUI for the first time 
+  lets say if we have developed and testing the project in SIT1 then to test the post/put api we need 
+  to have the payload which we can get from GUI by login and hit the URL => go to developer tools =>
+  =>network=>console=>click on called api=>payload=>click on view resource=>copy the payload=>add your changed fields into that
+  =>go to swagger=>hit the API and in sample model paste the copied payload and execute api.
+  
+
+
